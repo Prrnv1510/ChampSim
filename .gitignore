@@ -1,32 +1,22 @@
-.csconfig/
-_configuration.mk
+# Ignore traces
+traces/
 
-**/__pycache__/
-*.pyc
+# Ignore simulation outputs
+results/
 
+# Ignore generated binaries
 bin/
+obj/
+predictor_test
+optgen_test
+rrip_test
 
-**/*.o
-**/*.d
-
-test/000-test-main
-
-tracer/pin/obj-intel64/
-
+# macOS
+.DS_Store__pycache__/
 vcpkg_installed/
+*.o
 
-**/_build
-**/_doxygen
-
-absolute.options
-**/legacy.options
-**/function_patch.options
-**/legacy_bridge.inc
-**/legacy_bridge.h
-**/legacy_bridge.cc
-
-.cache/
-compile_commands.json
-
-.vscode/
-**/.DS_Store
+__pycache__/
+.csconfig/
+*.o
+.DS_Store

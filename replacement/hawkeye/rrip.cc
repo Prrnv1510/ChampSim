@@ -1,0 +1,38 @@
+#include "rrip.h"
+
+void update_rrpv(std::vector<int>& rrpv, std::size_t way,Classification cls, bool is_hit){
+
+    if(cls == Classification::CACHE_AVERSE){
+        rrpv[way] = 7;
+        return ; 
+    }
+
+    rrpv[way] = 0;
+
+    if(!is_hit){
+        for(std::size_t i=0; i<rrpv.size();i++){
+            if(i!=way && rrpv[i] < 7){
+                rrpv[i]++;
+            }
+        }
+    }
+}
+
+std::size_t find_victim(std::vector<int>& rrpv){
+    while (true)
+    {
+        for(std::size_t i=0;i<rrpv.size(); i++){
+            if(rrpv[i] == 7)
+            return i;
+        }
+
+        for (int& value:rrpv)
+        {
+            if(value < 7){
+                value++;
+            }
+        }
+        
+    }
+    
+}
